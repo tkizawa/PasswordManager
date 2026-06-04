@@ -34,17 +34,6 @@ dotnet build
 dotnet run
 ```
 
-### MSI インストーラのビルド
-
-`Installer` フォルダーに WiX MSI プロジェクトを追加しました。ビルドには WiX Toolset 3.11 以降が必要です。
-
-```powershell
-cd Installer
-powershell .\build-installer.ps1
-```
-
-生成された MSI は `Installer\bin\Release\PasswordManagerAppInstaller.msi` に出力されます。
-
 ## 使い方
 
 ### 起動時
