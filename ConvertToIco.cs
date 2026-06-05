@@ -1,6 +1,8 @@
 using System.Drawing;
 
 // PNG to ICO converter
+// このファイルはPowerShellスクリプト（ConvertToIco.ps1）に置き換えられました
+/*
 string pngPath = "lock_icon.png";
 string icoPath = "lock_icon.ico";
 
@@ -17,3 +19,4 @@ using (Bitmap bitmap = new Bitmap(pngPath))
 
 Console.WriteLine($"✓ Converted {pngPath} to {icoPath}");
 Console.WriteLine($"✓ File size: {new FileInfo(icoPath).Length} bytes");
+*/
