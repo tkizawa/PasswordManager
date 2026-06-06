@@ -24,3 +24,7 @@ obj/
 # OS
 .DS_Store
 Thumbs.db
+ 
+# Installer build outputs
+Installer/publish/
+Installer/Output/

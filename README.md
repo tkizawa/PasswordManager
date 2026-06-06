@@ -34,6 +34,23 @@ dotnet build
 dotnet run
 ```
 
+### インストーラー（EXE形式）の作成手順
+
+本アプリは、**Inno Setup 6** を使用して Windows 用の `.exe` インストーラーを作成することができます。
+
+#### 前提条件
+- **Inno Setup 6** がインストールされていること。（インストールされていない場合は、PowerShell 等で `winget install JRSoftware.InnoSetup` を実行してインストールできます）
+
+#### ビルド手順
+1. `Installer` ディレクトリへ移動します。
+2. PowerShell でビルドスクリプトを実行します。
+```powershell
+cd Installer
+powershell .\build-installer.ps1
+```
+3. ビルドに成功すると、`Installer\Output\PasswordManagerAppSetup.exe` にインストーラーが生成されます。
+   - インストールを実行すると、アプリは `C:\Program Files\PasswordManagerApp` に配置され、スタートメニューに登録されます。
+
 ## 使い方
 
 ### 起動時
