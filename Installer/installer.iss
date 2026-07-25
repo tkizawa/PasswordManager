@@ -1,7 +1,7 @@
 ; Inno Setup Script for PasswordManagerApp
 ; Define App details
 #define AppName "PasswordManagerApp"
-#define AppVersion "1.0.0"
+#define AppVersion "1.0.0.0"
 #define AppPublisher "PasswordManagerApp"
 #define AppExeName "PasswordManagerApp.exe"
 
