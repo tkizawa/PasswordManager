@@ -1,25 +1,25 @@
-# PasswordManagerApp 利用者マニュアル
+# WoodStream PasswordManager 利用者マニュアル
 
-本マニュアルは、パスワード管理アプリ「PasswordManagerApp」のインストール方法および基本的な使い方について説明します。
+本マニュアルは、パスワード管理アプリ「WoodStream PasswordManager」のインストール方法および基本的な使い方について説明します。
 
 ---
 
 ## 1. インストール手順
 
-本アプリは専用のインストーラー（`PasswordManagerAppSetup.exe`）から簡単にインストールできます。
+本アプリは専用のインストーラー（`WoodStreamPasswordManagerSetup.exe`）から簡単にインストールできます。
 
 ### ① インストーラーの起動
-1. 生成された **`PasswordManagerAppSetup.exe`** をダブルクリックして実行します。
+1. 生成された **`WoodStreamPasswordManagerSetup.exe`** をダブルクリックして実行します。
 
 ### ② セットアップウィザード
 1. **インストール先の指定**:
-   - デフォルトでは `C:\Program Files\PasswordManagerApp` にインストールされます。通常はこのまま **「次へ」** をクリックしてください。
+   - デフォルトでは `C:\Program Files\WoodStream PasswordManager` にインストールされます。通常はこのまま **「次へ」** をクリックしてください。
 2. **追加タスクの選択**:
    - デスクトップ上に起動用のショートカットを作成したい場合は、**「デスクトップ上にアイコンを作成する」** にチェックを入れて **「次へ」** をクリックします。
 3. **インストールの実行**:
    - 設定内容を確認し、**「インストール」** をクリックします。
 4. **完了**:
-   - **「PasswordManagerApp を実行する」** にチェックを入れた状態で **「完了」** をクリックすると、アプリが自動的に起動します。
+   - **「WoodStream PasswordManager を実行する」** にチェックを入れた状態で **「完了」** をクリックすると、アプリが自動的に起動します。
 
 ---
 

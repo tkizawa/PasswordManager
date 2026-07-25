@@ -34,7 +34,7 @@ public partial class MasterPasswordDialog : Form
         MinimizeBox = false;
         StartPosition = FormStartPosition.CenterScreen;
         Text = "マスターパスワード";
-        Icon = null;
+        SetAppIcon();
 
         // タイトルラベル
         lblTitle.AutoSize = true;
@@ -47,6 +47,7 @@ public partial class MasterPasswordDialog : Form
         lblPassword.Text = "パスワード:";
 
         // パスワードテキストボックス
+        _txtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         _txtPassword.Location = new Point(12, 60);
         _txtPassword.Name = "txtPassword";
         _txtPassword.Size = new Size(376, 27);
@@ -59,6 +60,7 @@ public partial class MasterPasswordDialog : Form
         lblConfirm.Visible = _isNewStore;
 
         // 確認テキストボックス
+        _txtConfirm.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         _txtConfirm.Location = new Point(12, 115);
         _txtConfirm.Name = "txtConfirm";
         _txtConfirm.Size = new Size(376, 27);
@@ -66,6 +68,7 @@ public partial class MasterPasswordDialog : Form
         _txtConfirm.Visible = _isNewStore;
 
         // OKボタン
+        btnOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         btnOK.DialogResult = DialogResult.None;
         btnOK.Location = new Point(232, _isNewStore ? 160 : 110);
         btnOK.Name = "btnOK";
@@ -76,6 +79,7 @@ public partial class MasterPasswordDialog : Form
         btnOK.Click += BtnOK_Click;
 
         // キャンセルボタン
+        btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         btnCancel.DialogResult = DialogResult.Cancel;
         btnCancel.Location = new Point(313, _isNewStore ? 160 : 110);
         btnCancel.Name = "btnCancel";
@@ -126,5 +130,33 @@ public partial class MasterPasswordDialog : Form
         MasterPassword = _txtPassword.Text;
         DialogResult = DialogResult.OK;
         Close();
+    }
+
+    private void SetAppIcon()
+    {
+        try
+        {
+            string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lock_icon.ico");
+            if (File.Exists(iconPath))
+            {
+                this.Icon = new Icon(iconPath);
+            }
+            else if (File.Exists("lock_icon.ico"))
+            {
+                this.Icon = new Icon("lock_icon.ico");
+            }
+            else
+            {
+                var assocIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                if (assocIcon != null)
+                {
+                    this.Icon = assocIcon;
+                }
+            }
+        }
+        catch
+        {
+            // アイコン読み込み失敗時は無視
+        }
     }
 }

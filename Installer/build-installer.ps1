@@ -63,7 +63,7 @@ if ($LASTEXITCODE -ne 0) {
     Exit 1
 }
 
-$outputExe = Join-Path $ScriptDir "Output\PasswordManagerAppSetup.exe"
+$outputExe = Join-Path $ScriptDir "Output\WoodStreamPasswordManagerSetup.exe"
 if (Test-Path $outputExe) {
     Write-Host "`nInstaller generated successfully!" -ForegroundColor Green
     Write-Host "Installer Path: $outputExe" -ForegroundColor Green

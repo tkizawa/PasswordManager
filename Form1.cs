@@ -12,9 +12,38 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
+        SetAppIcon();
         _userSettings = UserSettingsManager.Load();
         ApplyWindowSettings();
         _store = new PasswordStore(GetDataFilePath());
+    }
+
+    private void SetAppIcon()
+    {
+        try
+        {
+            string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lock_icon.ico");
+            if (File.Exists(iconPath))
+            {
+                this.Icon = new Icon(iconPath);
+            }
+            else if (File.Exists("lock_icon.ico"))
+            {
+                this.Icon = new Icon("lock_icon.ico");
+            }
+            else
+            {
+                var assocIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                if (assocIcon != null)
+                {
+                    this.Icon = assocIcon;
+                }
+            }
+        }
+        catch
+        {
+            // アイコン読み込み失敗時は無視
+        }
     }
 
     protected override void OnShown(EventArgs e)
@@ -64,8 +93,21 @@ public partial class Form1 : Form
 
     private static string GetDataFilePath()
     {
-        var appFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PasswordManagerApp");
-        return Path.Combine(appFolder, "passwords.json");
+        var appFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "WoodStream PasswordManager");
+        var legacyFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PasswordManagerApp");
+
+        // 既存のデータがあれば移行または読み込み、なければ新しいフォルダを作成
+        var newPath = Path.Combine(appFolder, "passwords.json");
+        var legacyPath = Path.Combine(legacyFolder, "passwords.json");
+
+        if (!File.Exists(newPath) && File.Exists(legacyPath))
+        {
+            Directory.CreateDirectory(appFolder);
+            File.Copy(legacyPath, newPath, true);
+        }
+
+        Directory.CreateDirectory(appFolder);
+        return newPath;
     }
 
     private void ApplyWindowSettings()

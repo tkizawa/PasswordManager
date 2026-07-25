@@ -1,8 +1,8 @@
 ; Inno Setup Script for PasswordManagerApp
 ; Define App details
-#define AppName "PasswordManagerApp"
+#define AppName "WoodStream PasswordManager"
 #define AppVersion "1.0.0.0"
-#define AppPublisher "PasswordManagerApp"
+#define AppPublisher "WoodStream"
 #define AppExeName "PasswordManagerApp.exe"
 
 [Setup]
@@ -16,7 +16,7 @@ DisableProgramGroupPage=yes
 ; Visual styling
 WizardStyle=modern
 OutputDir=Output
-OutputBaseFilename=PasswordManagerAppSetup
+OutputBaseFilename=WoodStreamPasswordManagerSetup
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64compatible

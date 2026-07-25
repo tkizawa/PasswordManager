@@ -1,4 +1,4 @@
-# PasswordManager
+# WoodStream PasswordManager
 
 安全で暗号化されたパスワード管理アプリケーションです。マスターパスワード1つであらゆるパスワードを管理できます。
 
@@ -113,8 +113,8 @@ powershell .\build-installer.ps1
 
 アプリケーション設定とデータは以下に保存されます：
 
-- **パスワードファイル**: `%LOCALAPPDATA%\PasswordManagerApp\passwords.json`
-- **UI設定**: `%LOCALAPPDATA%\PasswordManagerApp\settings.json`
+- **パスワードファイル**: `%LOCALAPPDATA%\WoodStream PasswordManager\passwords.json`
+- **UI設定**: `%LOCALAPPDATA%\WoodStream PasswordManager\settings.json`
 
 ## マスターパスワードを忘れた場合
 
@@ -122,7 +122,7 @@ powershell .\build-installer.ps1
 
 1. アプリを終了
 2. 以下のファイルを削除
-   - `%LOCALAPPDATA%\PasswordManagerApp\passwords.json`
+   - `%LOCALAPPDATA%\WoodStream PasswordManager\passwords.json`
 3. アプリを再起動
 4. 新しいマスターパスワードを設定
 

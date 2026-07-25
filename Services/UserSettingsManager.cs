@@ -17,9 +17,20 @@ public static class UserSettingsManager
 {
     private static string GetSettingsFilePath()
     {
-        var appFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PasswordManagerApp");
+        var appFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "WoodStream PasswordManager");
+        var legacyFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PasswordManagerApp");
+
+        var newPath = Path.Combine(appFolder, "settings.json");
+        var legacyPath = Path.Combine(legacyFolder, "settings.json");
+
+        if (!File.Exists(newPath) && File.Exists(legacyPath))
+        {
+            Directory.CreateDirectory(appFolder);
+            File.Copy(legacyPath, newPath, true);
+        }
+
         Directory.CreateDirectory(appFolder);
-        return Path.Combine(appFolder, "settings.json");
+        return newPath;
     }
 
     public static UserSettings Load()

@@ -1,4 +1,4 @@
-﻿namespace PasswordManagerApp;
+namespace PasswordManagerApp;
 
 partial class Form1
 {
@@ -279,7 +279,7 @@ partial class Form1
         ClientSize = new System.Drawing.Size(900, 600);
         Controls.Add(mainLayout);
         Name = "Form1";
-        Text = "Password Manager";
+        Text = "WoodStream PasswordManager";
         ResumeLayout(false);
     }
 
